@@ -12,6 +12,14 @@ class DataSourceProvider extends Form
      */
     public function getDataSourceData()
     {
+        $data = $this->getContext()->getDataProvider()->getData();
+
+        if (isset($data["ripe"])) {
+            return [
+                'data' => $data["ripe"]
+            ];
+        }
+
         return parent::getDataSourceData();
     }
 }
