@@ -33,9 +33,9 @@ class Index extends Action implements HttpGetActionInterface
         /** @var Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Boolfly_Brand::brand');
-        $resultPage->addBreadcrumb(__('Boolfly Brand'), __('Brand'));
-        $resultPage->addBreadcrumb(__('Manage Boolfly Brand'), __('Manage Boolfly Brand'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Boolfly Brand'));
+        $resultPage->addBreadcrumb(__('Bridge Settings'), __('Brand'));
+        $resultPage->addBreadcrumb(__('Manage Bridge Settings'), __('Manage Bridge Settings'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Bridge Settings'));
         return $resultPage;
     }
 }

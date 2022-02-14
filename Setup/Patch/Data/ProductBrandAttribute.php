@@ -56,7 +56,7 @@ class ProductBrandAttribute implements DataPatchInterface
             Product::ENTITY,
             'brand',
             [
-                'group' => 'Brand Listing',
+                'group' => 'Brand Listingg',
                 'type' => 'int',
                 'backend' => '',
                 'frontend' => '',

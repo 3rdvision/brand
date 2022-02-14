@@ -51,31 +51,31 @@ class Edit extends Action implements HttpGetActionInterface
 
     public function execute()
     {
-        $entityId = $this->getRequest()->getParam('entity_id');
-        $model = $this->brandFactory->create();
-        if ($entityId) {
-            $model->load($entityId);
-            if (!$model->getId()) {
-                $this->messageManager->addErrorMessage(__('This brand no longer exists.'));
-                /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-                $resultRedirect = $this->resultRedirectFactory->create();
-                return $resultRedirect->setPath('*/*/');
-            }
-        }
-        //Set entered data if was error when do save
-        $data = $this->_getSession()->getFormData(true);
-        if (!empty($data)) {
-            $model->setData($data);
-        }
-        $this->coreRegistry->register('bf_brand', $model);
-        /** @var Page $resultPage */
+        // $entityId = $this->getRequest()->getParam('entity_id');
+        // $model = $this->brandFactory->create();
+        // if ($entityId) {
+        //     $model->load($entityId);
+        //     if (!$model->getId()) {
+        //         $this->messageManager->addErrorMessage(__('This brand no longer exists.'));
+        //         /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+        //         $resultRedirect = $this->resultRedirectFactory->create();
+        //         return $resultRedirect->setPath('*/*/');
+        //     }
+        // }
+        // //Set entered data if was error when do save
+        // $data = $this->_getSession()->getFormData(true);
+        // if (!empty($data)) {
+        //     $model->setData($data);
+        // }
+        // $this->coreRegistry->register('bf_brand', $model);
+        // /** @var Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Boolfly_Brand::brand')
-            ->addBreadcrumb(__('Boolfly Brand'), __('Brand'))
-            ->addBreadcrumb(__('Manage Brand'), __('Manage Brand'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Boolfly Brand'));
-        $resultPage->getConfig()->getTitle()
-            ->prepend($model->getId() ? $model->getName() : __('New Brand'));
+        // $resultPage->setActiveMenu('Boolfly_Brand::brand')
+        //     ->addBreadcrumb(__('Bridge Settings'), __('Brand'))
+        //     ->addBreadcrumb(__('Manage Brand'), __('Manage Brand'));
+        // $resultPage->getConfig()->getTitle()->prepend(__('Bridge Settings'));
+        // $resultPage->getConfig()->getTitle()
+        //     ->prepend($model->getId() ? $model->getName() : __('New Brand'));
         return $resultPage;
     }
 }

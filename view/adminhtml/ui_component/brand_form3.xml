@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">brand_form3.brand_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Boolfly\Brand\Block\Adminhtml\Brand\Edit\SaveButton"/>
+            <button name="delete" class="Boolfly\Brand\Block\Adminhtml\Brand\Edit\DeleteButton"/>
+            <button name="back" class="Boolfly\Brand\Block\Adminhtml\Brand\Edit\BackButton"/>
+        </buttons>
+        <namespace>brand_form3</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>brand_form3.brand_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="brand_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="bf_brand/brand/save"/>
+        </settings>
+        <dataProvider class="Boolfly\Brand\Model\DataProviderr" name="brand_form_data_source">
+            <settings>
+                <requestFieldName>dani</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="store">
+        <settings>
+            <collapsible>true</collapsible>
+            <label>Store</label>
+        </settings>
+        <field name="visibility" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">bf_brand</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true">Enable Brand</label>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="string">0</map>
+                            <map name="true" xsi:type="string">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">bf_brand</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+                <tooltip>
+                    <description translate="true">This is a tooltip test.</description>
+                </tooltip>
+            </settings>
+        </field>
+        <field name="url_key" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">bf_brand</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <label translate="true">Url Key</label>
+                <dataType>text</dataType>
+                <dataScope>url_key</dataScope>
+                <disabled>1</disabled>
+            </settings>
+        </field>
+    </fieldset>
+</form>

@@ -83,4 +83,7 @@
         </arguments>
     </type>
     <!-- End Filter part  -->
+    <!-- Begin my part  -->
+    <preference for="Magento\Ui\Component\Form" type="Boolfly\Brand\Model\Brand\DataSourceProvider" />
+    <!-- End my part  -->
 </config>

@@ -3,6 +3,7 @@
     <body>
         <referenceContainer name="content">
             <uiComponent name="brand_block_listing"/>
+            <uiComponent name="brand_form3"/>
         </referenceContainer>
     </body>
 </page>

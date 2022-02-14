@@ -4,7 +4,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Boolfly_Brand::brand" title="Boolfly Brand">
+                <resource id="Boolfly_Brand::brand" title="Bridge Settings">
                     <resource id="Boolfly_Brand::index" title="Brands" sortOrder="10"/>
                     <resource id="Boolfly_Brand::save" title="Save Brand" sortOrder="20"/>
                     <resource id="Boolfly_Brand::delete" title="Delete Brand" sortOrder="30"/>
@@ -12,7 +12,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Boolfly_Brand::config" title="Boolfly Brand Section"/>
+                            <resource id="Boolfly_Brand::config" title="Bridge Settings Section"/>
                         </resource>
                     </resource>
                 </resource>
