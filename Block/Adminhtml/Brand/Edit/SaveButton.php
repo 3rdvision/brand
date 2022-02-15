@@ -15,27 +15,38 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
         return [
             'label' => __('Savee'),
             'class' => 'save primary',
-            'data_attribute' => [
-                'mage-init' => [
-                    'buttonAdapter' => [
-                        'actions' => [
-                            [
-                                'targetName' => 'brand_form.brand_form',
-                                'actionName' => 'save',
-                                'params' => [
-                                    true,
-                                    [
-                                        'back' => 'continue'
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ],
+            'on_click' => $this->saveModel(),
+            // 'data_attribute' => [
+            //     'mage-init' => [
+            //         'buttonAdapter' => [
+            //             'actions' => [
+            //                 [
+            //                     'targetName' => 'brand_form.brand_form',
+            //                     'actionName' => 'save',
+            //                     'params' => [
+            //                         true,
+            //                         [
+            //                             'back' => 'continue'
+            //                         ]
+            //                     ]
+            //                 ]
+            //             ]
+            //         ]
+            //     ]
+            // ],
             'class_name' => Container::SPLIT_BUTTON,
             'options' => $this->getOptions(),
         ];
+    }
+
+    /**
+     * Retrieve options
+     *
+     * @return array
+     */
+    private function saveModel()
+    {
+        xdebug_break();
     }
 
     /**

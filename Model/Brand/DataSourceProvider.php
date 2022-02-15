@@ -4,19 +4,16 @@ namespace Boolfly\Brand\Model\Brand;
 
 use Magento\Ui\Component\Form;
 
-class DataSourceProvider extends Form
-{
-
+class DataSourceProvider extends Form {
     /**
      * @inheritdoc
      */
-    public function getDataSourceData()
-    {
+    public function getDataSourceData() {
         $data = $this->getContext()->getDataProvider()->getData();
 
-        if (isset($data["ripe"])) {
+        if (isset($data["custom"])) {
             return [
-                'data' => $data["ripe"]
+                'data' => $data["custom"]
             ];
         }
 

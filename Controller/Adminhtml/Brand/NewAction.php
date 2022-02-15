@@ -31,6 +31,7 @@ class NewAction extends Action implements HttpGetActionInterface
 
     public function execute()
     {
+        xdebug_break();
         $resultForward = $this->resultForwardFactory->create();
         return $resultForward->forward('edit');
     }
